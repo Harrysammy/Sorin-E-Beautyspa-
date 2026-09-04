@@ -6,8 +6,8 @@
   const wireLinks = (scope=document) => scope.querySelectorAll('.whatsapp-link').forEach(el => { el.href = waUrl(el.dataset.wa || 'Hello Sorin E BeautySpa, I would like to make an enquiry.'); el.target = '_blank'; el.rel = 'noopener'; });
 
   document.head.insertAdjacentHTML('beforeend', `<style>.logo img{width:145px;height:54px;object-fit:contain;mix-blend-mode:multiply}.logo{gap:10px}.logo>span:not(.logo-motto){display:none}.logo-motto{font:700 8px 'DM Sans',sans-serif!important;letter-spacing:.15em!important;line-height:1!important;white-space:nowrap}.offer{padding:88px 8vw;background:#e7d3b4;text-align:center}.offer h2{font:500 clamp(38px,4.3vw,62px)/1 'Playfair Display',serif;letter-spacing:-.05em;margin:0}.offer h2 em{font-style:italic}.offer p:not(.eyebrow){max-width:600px;margin:20px auto 27px}.media-placeholder{min-height:100%;width:100%;display:grid;place-items:center;text-align:center;padding:28px;background:linear-gradient(135deg,#1b423c,#b9995c);color:#fff;font:600 12px/1.6 'DM Sans';letter-spacing:.12em}.media-placeholder span{max-width:250px}.gallery-grid .media-placeholder{min-height:180px}.footer-logo img{background:#fff}@media(max-width:540px){.logo img{width:110px;height:42px}.logo-motto{display:none}}</style>`);
-  const favicon = document.querySelector('link[rel="icon"]'); if (favicon) { favicon.href = 'sorin-e-logo.jpeg'; favicon.type = 'image/jpeg'; }
-  document.querySelectorAll('.logo img').forEach(img => { img.src = 'sorin-e-logo.jpeg'; img.alt = 'Sorin E Beauty Spa logo'; });
+  const favicon = document.querySelector('link[rel="icon"]'); if (favicon) { favicon.href = 'assets/logo/sorin-e-logo.jpeg'; favicon.type = 'image/jpeg'; }
+  document.querySelectorAll('.logo img').forEach(img => { img.src = 'assets/logo/sorin-e-logo.jpeg'; img.alt = 'Sorin E Beauty Spa logo'; });
   document.querySelectorAll('.logo > span').forEach(span => { span.className = 'logo-motto'; span.textContent = business.motto; });
   const eyebrow = document.querySelector('.hero-copy .eyebrow'); if (eyebrow) eyebrow.textContent = `${business.motto.toUpperCase()} · ABUJA'S BEAUTY & WELLNESS SANCTUARY`;
   const offer = document.createElement('section'); offer.className = 'offer'; offer.innerHTML = `<p class="eyebrow">PATRONAGE REWARD</p><h2>Up to <em>15% off</em></h2><p>The more you patronize Sorin E BeautySpa, the more you enjoy our appreciation for your loyalty. Your available discount is confirmed directly with our team.</p><a class="button dark whatsapp-link" data-wa="Hello Sorin E BeautySpa, I would like to ask about the patronage reward.">Ask about your reward →</a>`; document.querySelector('.promise').before(offer);
@@ -17,8 +17,8 @@
   document.querySelector('.membership .section-title h2').innerHTML = 'Loyalty, <em>appreciated.</em>';
   document.querySelector('.membership .section-title p:not(.eyebrow)').textContent = 'The more you patronize Sorin E BeautySpa, the more you enjoy our appreciation for your loyalty. Ask our team about the reward available for your appointment.';
   const useImage = (selector, source, alt) => document.querySelectorAll(selector).forEach(node => { node.src = source; node.alt = alt; node.removeAttribute('srcset'); });
-  useImage('.hero-image img', 'media/photos/p1.jpeg', 'Hot stone therapy at Sorin E BeautySpa');
-  useImage('.photo-frame img', 'media/photos/p2.jpeg', 'Foot spa treatment at Sorin E BeautySpa');
+  useImage('.hero-image img', 'assets/images/p1.jpeg', 'Hot stone therapy at Sorin E BeautySpa');
+  useImage('.photo-frame img', 'assets/images/p2.jpeg', 'Foot spa treatment at Sorin E BeautySpa');
   document.querySelector('.gallery .section-title p:not(.eyebrow)').textContent = 'A glimpse inside the Sorin E BeautySpa experience.';
   document.querySelectorAll('[data-address]').forEach(el => el.textContent = business.address);
   document.querySelectorAll('[data-phone]').forEach(el => { el.textContent = business.phoneDisplay; el.href = `tel:+${business.whatsapp}`; });
